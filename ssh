@@ -1,8 +1,8 @@
 #!/bin/bash
-mkdir /root/.ssh
-curl https://raw.githubusercontent.com/msl6030/debian/main/authorized_keys -o /root/.ssh/authorized_keys
+mkdir /home/groa/.ssh
+curl https://raw.githubusercontent.com/msl6030/debian/main/authorized_keys -o /home/groa/.ssh/authorized_keys
 sed -i "/UsePAM yes/c\UsePAM no" /etc/ssh/sshd_config
 sed -i "/#PermitRootLogin prohibit-password/c\PermitRootLogin prohibit-password" /etc/ssh/sshd_config
 sed -i "/#PasswordAuthentication yes/c\PasswordAuthentication no" /etc/ssh/sshd_config
-systemctl reload ssh
+systemctl reload sshd
 
