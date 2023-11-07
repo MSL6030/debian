@@ -1,2 +1,9 @@
 #!/bin/bash
 mkdir ~/.ssh
+curl https://raw.githubusercontent.com/msl6030/debian/main/authorized_keys -o /home/groa/.ssh/authorized_keys
+
+
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+UsePAM no
+PermitRootLogin no
